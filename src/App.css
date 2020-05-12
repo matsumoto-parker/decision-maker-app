@@ -30,10 +30,20 @@
   padding: 5px;
 }
 
+.form-container {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+}
+
 .input {
   margin: 10px 0;
   padding: 5px;
   font-size: 12px;
+  width: 60%;
 }
 
 .item-container {
@@ -47,4 +57,5 @@
 
 .decision {
   background: skyblue;
+  color: #fff;
 }
