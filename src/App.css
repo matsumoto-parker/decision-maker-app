@@ -31,11 +31,20 @@
 }
 
 .input {
-  margin-top: 10px;
+  margin: 10px 0;
   padding: 5px;
   font-size: 12px;
 }
 
+.item-container {
+  width: 100%;
+}
+
 .list-item {
   margin: 5px;
+  text-align: center;
+}
+
+.decision {
+  background: skyblue;
 }
