@@ -78,6 +78,11 @@ function App() {
 
   return (
     <section className="section">
+      <div className="title">
+        <h1 className="main-title">Decision Maker</h1>
+        <h2 className="subtitle">決断はPCに任せよう</h2>
+      </div>
+
       <div className="box">
         <form onSubmit={handleSubmit}>
           <div className="form-container">
@@ -117,7 +122,11 @@ function App() {
               onClick={randomize}
               className={classes.button}
               variant="contained"
-              style={{ backgroundColor: '#239a90', marginBottom: '5px' }}
+              style={{
+                backgroundColor: '#239a90',
+                marginBottom: '5px',
+                padding: '0 60px',
+              }}
             >
               決定
             </Button>
