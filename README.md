@@ -2,6 +2,9 @@
 
 Decision Maker
 
+![Decision Maker](https://user-images.githubusercontent.com/61912316/81769094-aef06d00-9517-11ea-890c-366f0d4ccbaf.png)
+
+
 ### `description`
 
 やることは決まっていても、どれから手をつけるか迷う時ってありますよね。そんな時に便利なのが Decision Maker です。<br />
