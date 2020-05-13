@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import './App.css';
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    button: {
+      backgroundColor: '#e84566',
+      color: '#Fff',
+      fontWeight: 600,
+      marginLeft: 5,
+      padding: 2,
+    },
+  })
+);
 
 const defItems = [
   {
@@ -50,17 +64,21 @@ function App() {
     const randomItem = items[Math.floor(Math.random() * items.length)];
 
     const newItems = items.map((item) =>
-      item === randomItem ? { ...item, selected: true } : item
+      item === randomItem
+        ? { ...item, selected: true }
+        : { ...item, selected: false }
     );
 
     setItems(newItems);
   };
 
+  const classes = useStyles();
+
   return (
     <section className="section">
       <div className="box">
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="form-container">
             <input
               className="input"
               type="text"
@@ -70,7 +88,9 @@ function App() {
                 setInputValue(e.target.value);
               }}
             />
-            <button>追加</button>
+            <Button className={classes.button} variant="contained">
+              追加
+            </Button>
           </div>
         </form>
         <ul className="item-container">
@@ -83,7 +103,16 @@ function App() {
             </li>
           ))}
         </ul>
-        {items.length > 0 && <button onClick={randomize}>決定</button>}
+        {items.length > 0 && (
+          <Button
+            onClick={randomize}
+            className={classes.button}
+            variant="contained"
+            style={{ backgroundColor: '#239a90', marginBottom: '5px' }}
+          >
+            決定
+          </Button>
+        )}
       </div>
     </section>
   );
