@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/decision-maker-app/static/css/main.96c0e231.chunk.css",
+    "main.js": "/decision-maker-app/static/js/main.45ac7707.chunk.js",
+    "main.js.map": "/decision-maker-app/static/js/main.45ac7707.chunk.js.map",
+    "runtime-main.js": "/decision-maker-app/static/js/runtime-main.69b53d44.js",
+    "runtime-main.js.map": "/decision-maker-app/static/js/runtime-main.69b53d44.js.map",
+    "static/js/2.1633557f.chunk.js": "/decision-maker-app/static/js/2.1633557f.chunk.js",
+    "static/js/2.1633557f.chunk.js.map": "/decision-maker-app/static/js/2.1633557f.chunk.js.map",
+    "index.html": "/decision-maker-app/index.html",
+    "precache-manifest.6ea8bdaa4f146bfb9fea0edb7b832290.js": "/decision-maker-app/precache-manifest.6ea8bdaa4f146bfb9fea0edb7b832290.js",
+    "service-worker.js": "/decision-maker-app/service-worker.js",
+    "static/css/main.96c0e231.chunk.css.map": "/decision-maker-app/static/css/main.96c0e231.chunk.css.map",
+    "static/js/2.1633557f.chunk.js.LICENSE.txt": "/decision-maker-app/static/js/2.1633557f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69b53d44.js",
+    "static/js/2.1633557f.chunk.js",
+    "static/css/main.96c0e231.chunk.css",
+    "static/js/main.45ac7707.chunk.js"
+  ]
+}
