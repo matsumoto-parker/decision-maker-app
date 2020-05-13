@@ -15,50 +15,46 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const defItems = [
-  {
-    text: 'option1',
-    selected: false,
-  },
-  {
-    text: 'option2',
-    selected: false,
-  },
-  {
-    text: 'option3',
-    selected: false,
-  },
-  {
-    text: 'option4',
-    selected: false,
-  },
-  {
-    text: 'option5',
-    selected: false,
-  },
-];
-
 function App() {
-  const [items, setItems] = useState(defItems);
+  const [items, setItems] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newItem = {
-      text: inputValue,
-      selected: false,
-    };
-    const newItems = [...items, newItem];
 
-    setInputValue('');
-    setItems(newItems);
+    if (inputValue !== '') {
+      const newItem = {
+        text: inputValue,
+        selected: false,
+      };
+      const newItems = [...items, newItem];
+
+      setInputValue('');
+      setItems(newItems);
+    }
   };
 
   const randomize = () => {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
       setTimeout(pickRandomItem, 100 * i);
     }
   };
+
+  // 10秒待ってから決定する処理
+  // const wait = (sec) => {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(resolve, sec * 1000);
+  //   });
+  // };
+
+  // const randomize = async () => {
+  //   try {
+  //     await wait(10);
+  //     pickRandomItem();
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   const pickRandomItem = () => {
     const randomItem = items[Math.floor(Math.random() * items.length)];
@@ -68,6 +64,12 @@ function App() {
         ? { ...item, selected: true }
         : { ...item, selected: false }
     );
+
+    setItems(newItems);
+  };
+
+  const removeItem = (i) => {
+    const newItems = items.filter((item, index) => index !== i);
 
     setItems(newItems);
   };
@@ -88,7 +90,11 @@ function App() {
                 setInputValue(e.target.value);
               }}
             />
-            <Button className={classes.button} variant="contained">
+            <Button
+              className={classes.button}
+              variant="contained"
+              onClick={handleSubmit}
+            >
               追加
             </Button>
           </div>
@@ -97,21 +103,26 @@ function App() {
           {items.map((item, index) => (
             <li
               className={`list-item ${item.selected ? 'decision' : ''}`}
+              onDoubleClick={() => removeItem(index)}
               key={index}
             >
               {item.text}
             </li>
           ))}
         </ul>
+
         {items.length > 0 && (
-          <Button
-            onClick={randomize}
-            className={classes.button}
-            variant="contained"
-            style={{ backgroundColor: '#239a90', marginBottom: '5px' }}
-          >
-            決定
-          </Button>
+          <>
+            <Button
+              onClick={randomize}
+              className={classes.button}
+              variant="contained"
+              style={{ backgroundColor: '#239a90', marginBottom: '5px' }}
+            >
+              決定
+            </Button>
+            <small>*ダブルクリックで選択肢を減らせます</small>
+          </>
         )}
       </div>
     </section>
