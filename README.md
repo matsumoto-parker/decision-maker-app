@@ -23,3 +23,6 @@ Decision Maker
 - for 文と setTimeout を組み合わせて、ランダムに選ぶ様を可視化。
 
 ### `app URL`
+
+Decision Makerを使ってみる<br />
+https://matsumoto-parker.github.io/decision-maker-app/
